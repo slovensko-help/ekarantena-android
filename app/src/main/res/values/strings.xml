@@ -1,0 +1,53 @@
+<resources>
+	<string name="app_ok">OK</string>
+	<string name="app_yes">Áno</string>
+	<string name="app_no">Nie</string>
+	<string name="app_apiFailed">Nepodarilo sa spojiť so serverom (%1$s), prosím skúste neskôr</string>
+
+	<string name="welcome_title">Bojujme\nproti Covid-19\nspoločne</string>
+	<string name="welcome_agree">Pokračovať</string>
+	<string name="welcome_attribution">Tento projekt vznikol ako\nspojenie dobrovoľnej iniciatívy\n&lt;b&gt;ZostanZdravy&lt;/b&gt; a &lt;b&gt;Sygic&lt;/b&gt;</string>
+	<string name="welcome_privacy">Informácie o spracovaní osobných údajov</string>
+
+	<string name="home_protect">Ako sa chrániť</string>
+	<string name="home_symptoms">Symptómy</string>
+	<string name="home_address">Vaša domáca adresa</string>
+	<string name="home_quarantineRemains">Povinná izolácia, zostáva dní</string>
+	<string name="home_statsTotal">Chorí</string>
+	<string name="home_statsRecovered">Uzdravení</string>
+	<string name="home_quarantine">Bol som v zahraničí alebo musím zostať v karanténe</string>
+	<string name="home_checkQuarantine">Vrátili ste sa zo zahraničia alebo máte zostať v karanténe?</string>
+	<string name="home_hotline">Infolinka</string>
+	<string name="home_map_list">Zoznam</string>
+	<string name="home_map_map">Mapa</string>
+	<string name="home_hide">Viac nezobrazovať</string>
+
+	<string name="profile_identifier">Môj identifikátor pre potreby zdravotníkov a hygienikov:</string>
+	<string name="profile_button">Odoslať dáta</string>
+	<string name="profile_sendSuccess">Lokálne dáta boli úspešne odoslané.</string>
+	<string name="profile_sendFailed">Dáta sa nepodarilo odoslať, skúste to prosím neskôr.</string>
+	<string name="profile_aboutApp">O aplikácii</string>
+
+	<string name="status_text">Aplikácia môže mať aktuálne problém s fungovaním. Prosím skontrolujte nastavenia Vášho telefónu a uistite sa že:</string>
+	<string name="status_bluetooth">Služba &lt;b>Bluetooth&lt;/b> je zapnutá</string>
+	<string name="status_location">Aplikácia má povolenie na získavanie &lt;b>aktuálnej pozície&lt;/b> – potrebné výhradne pre korektné fungovanie bluetooth, dáta o polohe nikdy neopustia Vaše zariadenie</string>
+	<string name="status_internet">Máte prístup k internetu - aspoň občasne napr. &lt;b>WiFi&lt;/b> alebo &lt;b>mobilné dáta&lt;/b></string>
+	<string name="status_unsupported">Nepodporované</string>
+	<string name="status_enabled">Povolené</string>
+	<string name="status_enable">Povoliť</string>
+	<string name="status_active">Aktívne</string>
+	<string name="status_activate">Aktivovať</string>
+
+	<string name="protect_title">Ako sa chrániť pred koronavírusom</string>
+	<string name="protect_text1">Často si umývajte ruky mydlom a vodou, najmenej po dobu 20 sekúnd. Môžete použiť dezinfekčný prostriedok na ruky na báze alkoholu</string>
+	<string name="protect_text2">Zakrývajte si nos a ústa pri kašľaní a kýchaní jednorázovou papierovou vreckovkou a následne ju zahoďte</string>
+	<string name="protect_text3">Nedotýkajte sa očí, nosa a úst neumytými rukami</string>
+	<string name="protect_text4">Vyhýbajte sa blízkemu kontaktu s ľudmi, ktorí javia príznak nádchy alebo chrípky</string>
+	<string name="protect_text5">Noste ochrannú masku v prípade, ze sa u Vás alebo u osôb vo Vašej blízkosti prejavujú respiračné symptómy</string>
+	<string name="protect_text6">Pravidelne čistite a dezinfikujte povrchy a objekty s ktorými ste Vy a Vaše okolie v pravidelnom kontakte</string>
+	<string name="protect_text7">Ak ste chorý, liečte sa doma.</string>
+
+	<string name="symptoms_title">Symptómy</string>
+	<string name="symptoms_text">Ľudia nakazení COVID-19 udávajú široké spektrum prejavov, od miernych až po závažné.&lt;br/>&lt;br/>Prejavy sa zvyčajne objavujú &lt;b>2-14 dní po vystavení sa nákaze&lt;/b> a môžu zahŕňať:</string>
+	<string name="symptoms_symptoms">horúčka nad 38 °C\n\nsuchý dusivý kašeľ\n\nťažkosti s dýchaním alebo dýchavičnosť\n\núnava alebo schvátenosť\n\nzimnica alebo triaška\n\nbolesť svalov\n\nbolesť hlavy\n\nbolesť hrdla\n\nnáhla strata čuchu a chuti\n\nhnačka\n\nzvracanie</string>
+</resources>

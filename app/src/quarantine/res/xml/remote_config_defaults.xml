@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+	<entry>
+		<key>active</key>
+		<value>1</value>
+	</entry>
+	<entry>
+		<key>hotlines</key>
+		<value>{"SK":"0800221234"}</value>
+	</entry>
+	<entry>
+		<key>quarantineLocationPeriodMinutes</key>
+		<value>10</value>
+	</entry>
+	<entry>
+		<key>quarantineLocationWaitDurationSeconds</key>
+		<value>90</value>
+	</entry>
+	<entry>
+		<key>desiredPositionAccuracy</key>
+		<value>250</value>
+	</entry>
+	<entry>
+		<key>quarantineLeftMessage</key>
+		<value>Opustili ste zónu domácej izolácie. Pre ochranu Vášho zdravia a zdravia Vašich blízkych, Vás žiadame o striktné dodržiavanie nariadenej domácej izolácie.</value>
+	</entry>
+	<entry>
+		<key>faceIDConfidenceThreshold</key>
+		<value>600</value>
+	</entry>
+	<entry>
+		<key>faceIDMatchThreshold</key>
+		<value>75</value>
+	</entry>
+	<entry>
+		<key>faceIDLivenessScoreThreshold</key>
+		<value>0.9</value>
+	</entry>
+</defaultsMap>

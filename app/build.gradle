@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
+
+def props = new Properties()
+props.load(new FileInputStream(project.file('app.properties')))
+
+android {
+    signingConfigs {
+        release {
+            storeFile file(props['keystoreFile'])
+            storePassword props['keystorePassword']
+            keyAlias props['keyAlias']
+            keyPassword props['keyPassword']
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName '1.0.0'
+    }
+    buildTypes {
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            ndk {
+                // make smaller apk for debugging (replace with yours phone ABI if needed)
+                abiFilters "arm64-v8a"
+            }
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    productFlavors {
+        flavorDimensions 'MODE', 'ENVIRONMENT'
+//        contactTracing {
+//            dimension 'MODE'
+//            applicationId 'sk.nczi.covid19'
+//            versionCode 6
+//            versionName '1.2.0'
+//        }
+        quarantine {
+            dimension 'MODE'
+            applicationId 'sk.nczi.ekarantena'
+            versionCode 8
+            versionName '1.0.7'
+        }
+        tst { // Gradle forbids flavors to start with "test"
+            dimension 'ENVIRONMENT'
+            versionNameSuffix '-test'
+        }
+        prod {
+            dimension 'ENVIRONMENT'
+            versionNameSuffix '-prod'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
+    implementation 'com.google.firebase:firebase-config:19.1.3'
+    implementation 'com.google.firebase:firebase-messaging:20.1.4'
+    implementation 'com.google.maps.android:android-maps-utils:1.0.2'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation 'com.github.ialokim:android-phone-field:0.2.3'
+    implementation 'sk.turn:http:1.7.0'
+    implementation 'org.hashids:hashids:1.0.3'
+    implementation 'com.auth0.android:jwtdecode:2.0.0'
+    compileOnly 'com.innovatrics.android:dot:2.17.0'
+    quarantineImplementation 'com.innovatrics.android:dot:2.17.0'
+    quarantineImplementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
+    quarantineImplementation 'com.google.zxing:core:3.3.0'
+}

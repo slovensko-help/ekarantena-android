@@ -1,0 +1,712 @@
+[{
+  "NM2": "Banskobystrický kraj",
+  "IDN3": 601,
+  "NM3": "Banská Bystrica",
+  "location": {
+    "lat": 48.7362770,
+    "lon": 19.1461917
+  }
+},
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 602,
+    "NM3": "Banská Štiavnica",
+    "location": {
+      "lat": 48.449576,
+      "lon": 18.9086908
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 701,
+    "NM3": "Bardejov",
+    "location": {
+      "lat": 49.2945857,
+      "lon": 21.2754012
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 101,
+    "NM3": "Bratislava I",
+    "location": {
+      "lat": 48.1471360,
+      "lon": 17.1023435
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 102,
+    "NM3": "Bratislava II",
+    "location": {
+      "lat": 48.1385322,
+      "lon": 17.1917978
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 103,
+    "NM3": "Bratislava III",
+    "location": {
+      "lat": 48.2068601,
+      "lon": 17.1466698
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 104,
+    "NM3": "Bratislava IV",
+    "location": {
+      "lat": 48.2044470,
+      "lon": 17.0284287
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 105,
+    "NM3": "Bratislava V",
+    "location": {
+      "lat": 48.0679720,
+      "lon": 17.1188370
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 603,
+    "NM3": "Brezno",
+    "location": {
+      "lat": 48.8060729,
+      "lon": 19.6438178
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 501,
+    "NM3": "Bytča",
+    "location": {
+      "lat": 49.2225205,
+      "lon": 18.5588046
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 301,
+    "NM3": "Bánovce nad Bebravou",
+    "location": {
+      "lat": 48.7188444,
+      "lon": 18.2603402
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 604,
+    "NM3": "Detva",
+    "location": {
+      "lat": 48.5587115,
+      "lon": 19.4183349
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 503,
+    "NM3": "Dolný Kubín",
+    "location": {
+      "lat": 49.2126790,
+      "lon": 19.2968746
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 201,
+    "NM3": "Dunajská Streda",
+    "location": {
+      "lat": 47.9916348,
+      "lon": 17.6206306
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 202,
+    "NM3": "Galanta",
+    "location": {
+      "lat": 48.1895413,
+      "lon": 17.7266636
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 801,
+    "NM3": "Gelnica",
+    "location": {
+      "lat": 48.8518087,
+      "lon": 20.9339430
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 203,
+    "NM3": "Hlohovec",
+    "location": {
+      "lat": 48.4251583,
+      "lon": 17.8033288
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 702,
+    "NM3": "Humenné",
+    "location": {
+      "lat": 48.9324540,
+      "lon": 21.9078917
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 302,
+    "NM3": "Ilava",
+    "location": {
+      "lat": 48.9962271,
+      "lon": 18.2332775
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 703,
+    "NM3": "Kežmarok",
+    "location": {
+      "lat": 49.1332664,
+      "lon": 20.4306967
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 401,
+    "NM3": "Komárno",
+    "location": {
+      "lat": 47.7625785,
+      "lon": 18.1294132
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 806,
+    "NM3": "Košice - okolie",
+    "location": {
+      "lat": 48.6846407,
+      "lon": 21.0565535
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 802,
+    "NM3": "Košice I",
+    "location": {
+      "lat": 48.7718642,
+      "lon": 21.2040671
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 803,
+    "NM3": "Košice II",
+    "location": {
+      "lat": 48.6463954,
+      "lon": 21.2013965
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 804,
+    "NM3": "Košice III",
+    "location": {
+      "lat": 48.7381404,
+      "lon": 21.2972294
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 805,
+    "NM3": "Košice IV",
+    "location": {
+      "lat": 48.6721939,
+      "lon": 21.2852454
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 605,
+    "NM3": "Krupina",
+    "location": {
+      "lat": 48.3518392,
+      "lon": 19.0670496
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 504,
+    "NM3": "Kysucké Nové Mesto",
+    "location": {
+      "lat": 49.3006944,
+      "lon": 18.7842828
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 402,
+    "NM3": "Levice",
+    "location": {
+      "lat": 48.2174240,
+      "lon": 18.5984375
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 704,
+    "NM3": "Levoča",
+    "location": {
+      "lat": 49.0202097,
+      "lon": 20.5843112
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 505,
+    "NM3": "Liptovský Mikuláš",
+    "location": {
+      "lat": 49.0811487,
+      "lon": 19.6192067
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 606,
+    "NM3": "Lučenec",
+    "location": {
+      "lat": 48.3286673,
+      "lon": 19.6690601
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 106,
+    "NM3": "Malacky",
+    "location": {
+      "lat": 48.4363404,
+      "lon": 17.0182641
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 506,
+    "NM3": "Martin",
+    "location": {
+      "lat": 49.0616613,
+      "lon": 18.9190235
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 705,
+    "NM3": "Medzilaborce",
+    "location": {
+      "lat": 49.2748349,
+      "lon": 21.9065029
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 807,
+    "NM3": "Michalovce",
+    "location": {
+      "lat": 48.7556769,
+      "lon": 21.9183858
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 303,
+    "NM3": "Myjava",
+    "location": {
+      "lat": 48.7552968,
+      "lon": 17.5674635
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 403,
+    "NM3": "Nitra",
+    "location": {
+      "lat": 48.3061414,
+      "lon": 18.0763760
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 304,
+    "NM3": "Nové Mesto nad Váhom",
+    "location": {
+      "lat": 48.7568395,
+      "lon": 17.8253958
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 404,
+    "NM3": "Nové Zámky",
+    "location": {
+      "lat": 47.9881643,
+      "lon": 18.1571098
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 507,
+    "NM3": "Námestovo",
+    "location": {
+      "lat": 49.4044720,
+      "lon": 19.4812155
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 305,
+    "NM3": "Partizánske",
+    "location": {
+      "lat": 48.6284930,
+      "lon": 18.3768911
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 107,
+    "NM3": "Pezinok",
+    "location": {
+      "lat": 48.2891353,
+      "lon": 17.2666557
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 204,
+    "NM3": "Piešťany",
+    "location": {
+      "lat": 48.5917973,
+      "lon": 17.8271550
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 607,
+    "NM3": "Poltár",
+    "location": {
+      "lat": 48.4295455,
+      "lon": 19.7947739
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 706,
+    "NM3": "Poprad",
+    "location": {
+      "lat": 49.0511221,
+      "lon": 20.2954140
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 306,
+    "NM3": "Považská Bystrica",
+    "location": {
+      "lat": 49.1131198,
+      "lon": 18.4476630
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 707,
+    "NM3": "Prešov",
+    "location": {
+      "lat": 49.0018324,
+      "lon": 21.2393119
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 307,
+    "NM3": "Prievidza",
+    "location": {
+      "lat": 48.7745206,
+      "lon": 18.6245384
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 308,
+    "NM3": "Púchov",
+    "location": {
+      "lat": 49.1235654,
+      "lon": 18.3241203
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 608,
+    "NM3": "Revúca",
+    "location": {
+      "lat": 48.6834697,
+      "lon": 20.1138148
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 609,
+    "NM3": "Rimavská Sobota",
+    "location": {
+      "lat": 48.3812295,
+      "lon": 20.0195452
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 808,
+    "NM3": "Rožňava",
+    "location": {
+      "lat": 48.6561405,
+      "lon": 20.5323841
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 508,
+    "NM3": "Ružomberok",
+    "location": {
+      "lat": 49.0752393,
+      "lon": 19.3066002
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 708,
+    "NM3": "Sabinov",
+    "location": {
+      "lat": 49.1027696,
+      "lon": 21.0978000
+    }
+  },
+  {
+    "NM2": "Bratislavský kraj",
+    "IDN3": 108,
+    "NM3": "Senec",
+    "location": {
+      "lat": 48.2170352,
+      "lon": 17.4061427
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 205,
+    "NM3": "Senica",
+    "location": {
+      "lat": 48.6798645,
+      "lon": 17.3610002
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 206,
+    "NM3": "Skalica",
+    "location": {
+      "lat": 48.8448118,
+      "lon": 17.2250302
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 709,
+    "NM3": "Snina",
+    "location": {
+      "lat": 48.9876570,
+      "lon": 22.1583021
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 809,
+    "NM3": "Sobrance",
+    "location": {
+      "lat": 48.7457689,
+      "lon": 22.1794779
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 810,
+    "NM3": "Spišská Nová Ves",
+    "location": {
+      "lat": 48.9452771,
+      "lon": 20.5636490
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 710,
+    "NM3": "Stará Ľubovňa",
+    "location": {
+      "lat": 49.3010575,
+      "lon": 20.6898463
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 711,
+    "NM3": "Stropkov",
+    "location": {
+      "lat": 49.2026115,
+      "lon": 21.6518049
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 712,
+    "NM3": "Svidník",
+    "location": {
+      "lat": 49.3055641,
+      "lon": 21.5681170
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 406,
+    "NM3": "Topoľčany",
+    "location": {
+      "lat": 48.5589454,
+      "lon": 18.1700065
+    }
+  },
+  {
+    "NM2": "Košický kraj",
+    "IDN3": 811,
+    "NM3": "Trebišov",
+    "location": {
+      "lat": 48.6284913,
+      "lon": 21.7155550
+    }
+  },
+  {
+    "NM2": "Trenčiansky kraj",
+    "IDN3": 309,
+    "NM3": "Trenčín",
+    "location": {
+      "lat": 48.8849360,
+      "lon": 18.0335208
+    }
+  },
+  {
+    "NM2": "Trnavský kraj",
+    "IDN3": 207,
+    "NM3": "Trnava",
+    "location": {
+      "lat": 48.3709108,
+      "lon": 17.5833218
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 509,
+    "NM3": "Turčianske Teplice",
+    "location": {
+      "lat": 48.8637142,
+      "lon": 18.8594751
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 510,
+    "NM3": "Tvrdošín",
+    "location": {
+      "lat": 49.3335213,
+      "lon": 19.5548296
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 610,
+    "NM3": "Veľký Krtíš",
+    "location": {
+      "lat": 48.2083508,
+      "lon": 19.3507599
+    }
+  },
+  {
+    "NM2": "Prešovský kraj",
+    "IDN3": 713,
+    "NM3": "Vranov nad Topľou",
+    "location": {
+      "lat": 48.8904721,
+      "lon": 21.6825245
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 407,
+    "NM3": "Zlaté Moravce",
+    "location": {
+      "lat": 48.3851703,
+      "lon": 18.3912685
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 611,
+    "NM3": "Zvolen",
+    "location": {
+      "lat": 48.5761806,
+      "lon": 19.1371155
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 502,
+    "NM3": "Čadca",
+    "location": {
+      "lat": 49.4385551,
+      "lon": 18.7897828
+    }
+  },
+  {
+    "NM2": "Nitriansky kraj",
+    "IDN3": 405,
+    "NM3": "Šaľa",
+    "location": {
+      "lat": 48.1513924,
+      "lon": 17.8756083
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 612,
+    "NM3": "Žarnovica",
+    "location": {
+      "lat": 48.4833487,
+      "lon": 18.7217034
+    }
+  },
+  {
+    "NM2": "Banskobystrický kraj",
+    "IDN3": 613,
+    "NM3": "Žiar nad Hronom",
+    "location": {
+      "lat": 48.5905012,
+      "lon": 18.8548946
+    }
+  },
+  {
+    "NM2": "Žilinský kraj",
+    "IDN3": 511,
+    "NM3": "Žilina",
+    "location": {
+      "lat": 49.2194498,
+      "lon": 18.7408001
+    }
+  }
+]

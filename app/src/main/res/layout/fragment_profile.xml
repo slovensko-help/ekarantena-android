@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fillViewport="true">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingHorizontal="32dp"
+		android:paddingTop="32dp"
+		android:paddingBottom="16dp">
+
+		<ImageView
+			android:id="@+id/imageView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:src="@drawable/profile" />
+
+		<TextView
+			android:id="@+id/textView_label"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:gravity="center_horizontal"
+			android:text="@string/profile_identifier"
+			android:textSize="18sp" />
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<ProgressBar
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center" />
+
+			<Button
+				android:id="@+id/button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:background="@drawable/bg_btn_ltblue"
+				android:drawableStart="@drawable/home_senddata"
+				android:drawableEnd="@drawable/chevron_right"
+				android:drawablePadding="8dp"
+				android:fontFamily="@font/poppins_light"
+				android:gravity="start|center_vertical"
+				android:text="@string/profile_button"
+				android:textColor="@color/colorPrimaryDark"
+				android:textSize="18sp" />
+		</FrameLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1" />
+
+		<TextView
+			android:id="@+id/textView_aboutApp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginVertical="8dp"
+			android:gravity="center_horizontal"
+			android:text="@string/profile_aboutApp"
+			android:textColor="@color/colorPrimary"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/textView_privacy"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?attr/selectableItemBackground"
+			android:gravity="center_horizontal"
+			android:text="@string/welcome_privacy"
+			android:textColor="@color/colorPrimary"
+			android:textSize="12sp" />
+	</LinearLayout>
+</ScrollView>

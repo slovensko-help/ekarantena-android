@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="apiUrl" translatable="false">TODO-dummy-placeholder</string>
+	<string name="phoneVerificationApiHost" translatable="false">TODO-dummy-placeholder</string>
+	<string name="phoneVerificationAuth" translatable="false">TODO-dummy-placeholder</string>
+</resources>

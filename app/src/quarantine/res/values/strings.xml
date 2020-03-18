@@ -1,0 +1,188 @@
+<resources>
+	<string name="app_name">eKaranténa</string>
+	<string name="app_userAgentAppName" translatable="false">eKarantena</string>
+
+	<string name="notification_channel_persistent">Quarantine watch</string>
+	<string name="notification_channel_alarm">Notifies of quarantine check requests and potential breaches</string>
+	<string name="notification_scan_title">eKaranténa beží na pozadí</string>
+	<string name="notification_scan_text">Dodržiavajte domácu izoláciu</string>
+	<string name="notification_scan_problem">Objavil sa problém</string>
+	<string name="notification_quarantineLeft_title">Opustili ste domácu izoláciu</string>
+	<string name="notification_quarantineInfo_text">Zostávajúcich dní v izolácii: %1$d</string>
+
+	<string name="welcome_title">Inteligentná karanténa Slovenskej republiky</string>
+	<string name="welcome_attribution"></string>
+
+	<string name="home_checkQuarantine">Vraciate sa zo zahraničia a ste registrovaný pre inteligentnú karanténu?</string>
+	<string name="home_checkVerification">Overiť sa v mieste izolácie</string>
+	<string name="home_checkVerification_none">V súčasnostni nie je požiadavka na overenie Vašej tváre a lokácie v izolácii. Táto požiadavka však môže prísť kedykoľvek.\n\nNeopúšťajte miesto Vašej povinnej izolácie. Môžete sa dopustiť vážneho priestupku.</string>
+	<string name="home_quarantineNotSetYet">Odpočet nebol zahájený</string>
+	<string name="home_quarantineNotSetExplanation">Udeje sa tak autoritou pri prechode hranicou</string>
+	<string name="home_quarantineStartsInFuture">Presuňte sa na adresu domácej izolácie do %1$s</string>
+
+	<string name="profile_identifier">Nasledovné tlačítko odhalí Váš identifikátor karantény</string>
+	<string name="profile_button">Zobraziť identifikátor</string>
+	<string name="profile_notInQuarantine">Pred týmto krokom je potrebné sa zaregistrovať do karantény na úvodnej obrazovke</string>
+
+	<string name="phoneVerification_title">Vaše telefónne číslo</string>
+	<string name="phoneVerification_text">Prosím overte medzinárodnú predvoľbu a zadajte Vaše telefónne číslo</string>
+	<string name="phoneVerification_explanation">Zadajte prosím telefónne číslo, na ktoré Vás budú môcť zdravotníci kontaktovať, v prípade, že ste boli v kontakte s infikovanou osobou.</string>
+	<string name="phoneVerification_privacyConsent">Pokračovaním súhlasím so spracúvaním údajov o mojom zdraví na účely ochrany života a zdravia v súvislosti so šírením vírusu COVID-19</string>
+	<string name="phoneVerification_continue">Pokračovať</string>
+	<string name="phoneVerification_invalidNumber">Telefónne číslo je neplatné, prosím skontrolujte zadané číslo</string>
+	<string name="phoneVerification_notAgreed">Musíte súhlasiť so spracovaním údajov</string>
+	<string name="phoneVerification_confirmTitle">Skontrolujte číslo</string>
+	<string name="phoneVerification_confirmText">%1$s\n\nJe toto telefónne číslo správne?</string>
+	<string name="phoneVerification_enterCode">Na zadané telefónne číslo sme poslali SMS s kódom.\n\nPre dokončenie overenia prosím zadajte nižšie prijatý 6-miestny kód.</string>
+	<string name="phoneVerification_wrongCode">Nesprávny kód, zadajte ho prosím znova.</string>
+	<string name="phoneVerification_leaveProcess">Ste si istý, že chcete opustiť túto obrazovku bez zadania kódu? Bez opätovnej autentifikácie sa sem nebudete môcť vrátiť.</string>
+
+	<string name="covidPassVerification_covidPass">Toto je Váš špeciálny identifikátor pre potrebu kontroly</string>
+	<string name="covidPassVerification_enterCode">Zadajte prosím 4-ciferné číslo sprostredkované autoritou</string>
+	<string name="covidPassVerification_yourCode">Vaše 6-ciferné číslo je</string>
+
+	<string name="status_cameraPermission">Prístup k fotoaparátu</string>
+	<string name="status_noBadApps">Žiadne zakázané aplikácie</string>
+	<string name="status_noMockLocation">Zakázanie simulovania polohy</string>
+	<string name="status_locationEnabled">Zapnuté lokačné služby</string>
+	<string name="status_locationPermission">Prístup k lokácii</string>
+	<string name="status_backgroundLocationPermission">Prístup k lokácii na pozadí</string>
+	<string name="status_currentLocation">Aktuálna poloha zariadenia</string>
+	<string name="status_searching">Hľadám...</string>
+	<string name="status_found">Nájdená</string>
+	<string name="status_forbidden">Zakázané</string>
+	<string name="status_forbid">Zakázať</string>
+	<string name="status_none">Žiadne</string>
+	<string name="status_uninstall">Odinštalovať</string>
+
+	<string name="presenceCheck_title">Dôležité</string>
+	<string name="presenceCheck_text">Aplikácia Vás žiada o overenie sa v mieste Vašej izolácie. Je potrebné reagovať okamžite a pokračovať rozpoznaním tváre. Aplikácia bude pristupovať k Vašemu fotoaparátu a GPS lokácii.</string>
+	<string name="presenceCheck_warning">Ak sa chcete vyhnúť kontrole zo strany štátu, sprístupnite si všetky prístupy v nastaveniach aplikácie, čím skôr.\n\nViac informácii nájdete na stránke tu:</string>
+	<string name="presenceCheck_url">https://www.korona.gov.sk/zostanzdravy/how-to.html</string>
+
+	<string name="faceid_title">Sledovanie tváre pre karanténu</string>
+	<string name="faceid_text1">Prosím naskenujte Vašu tvár pre prípadnú verifikáciu pri dodržiavaní povinnej izolácie.</string>
+	<string name="faceid_text2">Tento krok je povinný.</string>
+	<string name="faceid_text3">Dáta sú uložené výhradne na Vašom zariadení.</string>
+	<string name="faceid_start">Štart</string>
+	<string name="faceid_thankYou">Ďakujeme</string>
+	<string name="faceid_success">Dodržiavajte dôsledne domácu izoláciu. Zabránite tak šíreniu vírusu COVID-19.</string>
+	<string name="faceid_sorry">Ľutujeme</string>
+	<string name="faceid_failLicense">Neplatná licencia softvéru na overenie tváre, kontaktujte prosím dodávateľa aplikácie.</string>
+	<string name="faceid_failCameraInit">Nepodarilo sa nainicializovať kameru, skúste to prosím znova.</string>
+	<string name="faceid_failCameraAccess">Aplikácia nedostala prístup ku kamere, skúste to prosím znova.</string>
+	<string name="faceid_failCameraPermission">Aplikácia nemá povolenie na prístup ku kamere, povoľte prosím tento prístup.</string>
+	<string name="faceid_failCapture">Nepodarilo sa zachytiť tvár (%1$s), skúste to prosím znova.</string>
+	<string name="faceid_failVerify">Nepodarilo sa overiť uložené charakteristiky tváre, skúste to prosím znova.</string>
+	<string name="faceid_failHints">Pre lepšiu úspešnosť pri overení tváre nasledujte tieto inštrukcie:\n• držte telefón po celý čas vo výške očí,\n• snažte sa otočiť tvárou k zdroju svetla, nestojte chrbtom k oknu, aby ste nemali svetlo oproti Vám, ani nestojte priamo pod lampou, môžu spôsobovať tiene v tvári,\n• pokiaľ okuliare vytvárajú silnú reflexiu a zlyháva overenie, je vhodné si dať okuliare dole,\n• sledujte očami modrý alebo čierny bod na obrazovke,\n• prižmúrené oči môžu spôsobovať zlyhávanie overenia,\n• telefón držte po celý čas v jednej pozícii pokiaľ neprejdete celým procesom snímania tváre.</string>
+
+	<string name="about_text">Táto aplikácia bola vytvorená slovenskými dobrovoľníkmi a odborníkmi v
+rekordne krátkom čase, aby pomohli s bojom proti šíreniu pandémie a umožnila ľuďom zostať v teple
+domova namiesto štátnej karantény. Jej úloha nie je ultimátna a tak, ako každá technológia, aj táto
+technológia má pomôcť, ale nenahradí prácu epidemiológov, či iného personálu pri kontrole dodržiavania
+domácej karantény.
+\n\nJej úlohou je rýchlejšie odhaľovať možné zlyhania a zvýšiť dodržiavanie domácej karantény. Aplikácia
+môže mať viaceré problémy, ktoré budú za pochodu vylepšené. Z toho dôvodu sú zdieľané aj zdrojové
+kódy, aby pomohli odhaliť prípadné nedostatky. 
+\n\nAplikácia bola odovzdaná všetkým štátom zdarma vrátane Slovenska, aby pomohla
+zdravotníckym organizáciám prekonať nákazu Covid-19 a pomohla ľahšie zvládať nápor na ich
+pracovníkov. Je vyvinutá tak, aby aj v budúcnosti, pri vzniku akejkoľvek pandémie, mohla byť
+okamžite nasadená a pomohla spomaliť šírenie nákazy. Jej kód a know-how má slúžiť všetkým
+ľuďom sveta a nesmie byť majetkom žiadnej organizácie.
+\n\nAplikácia funguje v Slovenskej Republike na nasledovnom princípe.
+\n\nAplikácia slúži pre ľudí, ktorí prichádzajú zo zahraničia a sú umiestnení do domácej izolácie podľa
+nariadenia krízového štábu a úradu verejného zdravotníctva SR. Pred stiahnutím aplikácie je
+potrebné sa zaregistrovať na stránkach https://navraty.mzv.sk/, ktoré vydajú COVID-PASS. Rovnaké
+telefónne číslo, ktoré bude užívateľ používať na registráciu na stránkach, je potrebné používať aj v
+rámci aplikácie po celú dobu určenej karantény v domácom prostredí.
+\n\nFunkciou aplikácie je informovať užívateľa o zostávajúcej dobe karantény, notifikovať užívateľa a
+overovať jeho dodržiavanie domácej izolácie prostredníctvom tvárovej biometrie a polohy tohto
+zariadenia. Zároveň aplikácia zobrazuje štatistické údaje o celkovom počte nakazených a prehľad
+chorobnosti v regiónoch.
+\n\nProces funkcionality domácej karantény je nasledovný:
+\n\n1. Užívateľ, Repatriant, ktorý by chcel využiť domácu karanténu, sa musí prihlásiť na stránkach
+https://navraty.mzv.sk/  Svojimi identifikačnými údajmi, ako aj presným miestom, kde sa bude
+vyskytovať v domácej karanténe. Toto miesto nie je možné neskôr zmeniť. Zároveň je
+potrebné použiť jednotné telefónne číslo, ktoré bude užívateľ používať ako referenčné
+telefónne číslo v tomto telefóne po celú dobu pre aplikáciu eKarantena. Telefónne číslo nie
+je možné počas doby v domácej karanténe zmeniť a musí byť totožné s telefónnym
+číslom vo formulári registrácie domácej karantény na stránkach htts://navraty.mzv.sk/.
+\n2. Užívateľ si stiahne aplikáciu eKarantena Slovensko a musí povoliť všetky požiadavky
+aplikácie vrátane GPS, ktoré musia bežať na pozadí, notifikácie, či prístup k fotoaparátu.
+Užívateľ musí mať k dispozícii nepretržite internet, ako aj platnú SIM kartu na telefóne, kde
+beží aplikácia a je registrovaný na túto SIM kartu  po celú dobu používania. Bez týchto funkcií
+nebude povolené užívateľovi využívať domácu karanténu a môže byť umiestnený do
+štátneho zariadenia.
+\n3. Užívateľ sa následne zaregistruje prostredníctvom overovacej SMS a spraví si svoju osobnú
+tvárou biometriu, ktorá bude skontrolovaná na hraniciach, či táto biometria patrí jej
+užívateľovi. 
+\n4. V prípade, že aplikácia nebude fungovať na telefóne, alebo nebudú povolené všetky
+funkcionality, užívateľovi nebude musieť byť povolená domáca karanténa. 
+\n5. Na hraniciach bude vyzvaný autoritou, aby sa preukázal funkčnou aplikáciou a skontroluje sa
+biometria a či aplikácia funguje správne.
+\n6. Užívateľ sa preukáže svojím osobným kódom, alebo bar kódom, ktorý sa nachádza v
+informáciách o užívateľovi v aplikácii eKarantena Slovensko priamo pred autoritou.
+\n7. Následne autorite užívateľ nahlási identifikátor, alebo autorita zosníma bar kód z tejto 
+aplikácie, overí sa bezpečnostný kód, ktorý nadiktuje autorita a nasledovným krokom sa
+vygeneruje overovací kód, ktorý autorita overí a zadá do systému. Užívateľovi od tohto
+momentu začne plynúť 8-hodín na presunutie sa do miesta nahlásenej karantény vo
+webovom formulári v kroku 1. Toto miesto bude vyznačené aj v aplikácii.
+\n8. Po presune do miesta karantény sa aplikácia môže kedykoľvek dotazovať prostredníctvom
+SMS správ, aby sa užívateľ kedykoľvek verifikoval. Čas na verifikáciu sa môže z dňa na deň,
+z hodiny na hodinu meniť, preto je potrebné vykonať verifikáciu bezodkladne a mať telefón
+stále nabitý, prístup k GPS umožnený, ako aj k fotoaparátu aplikácie. Je vhodné pravidelne
+kontrolovať  pripojenie na internet a mať zapnuté zvonenie v prípade, že príde overovacia
+SMS. Táto SMS bude chodiť v rôznych nepravideľných intervaloch.
+\n9. Následne je potrebné, aby sa užívateľ overil prostredníctvom tvárovej biometrie a na server
+sa pošlú informácie ohľadom času, dátumu, prípadne vychýlení sa od polohy domácej
+karantény. Komunikácia so serverom môže obsahovať aj ďalšie údaje, ktoré sú povolené
+zákonom, či podmienkami ochrany súkromia užívateľa, ktoré užívateľ schválil pri inštalácii
+aplikácie.
+\n\nV prípade, že bude užívateľ pravidelne reagovať bezodkladne na správy, mať prístupný internet na
+zariadení a mať zapnuté iné požadované systémové nastavenia na zariadení a v aplikácii, aplikáciu
+neodinštaľuje, či inak nevyvedie z jej funkčnosti, zníži tým pravdepodobnosť kontrol od úradov,
+umiestnenia do štátneho zariadenia, či iného správneho šetrenia. V každom prípade, kontroly môžu
+byť aj námatkové.
+\n\nAplikácia neustále kontroluje GPS polohu lokálne a hlási porušenie, v prípade, že sa užívateľ oddiali
+od vopred určenej pozície.
+\n\nDôležité upozornenia na správne fungovanie aplikácie
+\n* Je potrebné povoliť prístup ku kamere
+\n* Je potrebné povoliť a mať zapnuté GPS aj na pozadí pre túto aplikáciu
+\n* Pozor na vybitie telefónu
+\n* Aplikáciu ponechajte nainštalovanú. Opätovná inštalácia nie je možná
+\n* Ponechajte zapnuté notifikácie nahlas na prichádzajúce SMS, alebo telefón pravidelne
+kontrolujte pre potrebu overenia tvárovej biometrie
+\n* Zabezpečte prístup na internet počas trvania karantény
+\n\nKeďže pri tejto nákaze je viac ako 50% ľudí bez príznakov, treba predpokladať, že každý, kto má byť
+v domácej karanténe, môže byť zároveň nositeľom choroby aj v tom prípade, ak nemá žiadne
+príznaky. Je preto nesmierne dôležité zostať v izolácii od okolia a nenakaziť tak iných, ktorých
+príznaky by mohli byť naopak fatálne. Porušovanie karantény bude postihované orgánmi v správnom
+konaní.
+\n\nVeľa z nás nákazu zvládne svojou imunitou. Sú ale takí, ktorí majú iné vážne ochorenia, či mladí, či
+starí a budú potrebovať pomoc zdravotníctva. 
+\n\nPreto je nesmierne dôležité prejaviť ľudskosť mladých voči starým, zdravých voči chorým a poraziť
+Covid-19, spoločne.
+\n\nVeľmi pekne ďakujeme za podporu všetkým, ktorí sa svojimi radami, prácou vo dne v noci a svojou
+nezištnou pomocou pričinili ku vzniku tohto projektu.
+\n\nAplikácia eKarantena je podľa zákona č. 362/2011 Z.z. o liekoch a zdravotníckych pomôckach a o
+zmene a doplnení niektorých zákonov a podľa nariadenia vlády č.582/2008 Z.z. ktorým sa ustanovujú
+podrobnosti o technických požiadavkách a postupoch posudzovania zhody zdravotníckych pomôcok
+zdravotníckou pomôckou triedy I. 
+\n\nVýrobca: Úrad verejného zdravotníctva SR</string>
+
+	<!-- Face Capture -->
+	<string name="dot_face_capture_instruction_step_position_centering">Dajte tvár do stredu</string>
+	<string name="dot_face_capture_instruction_step_position_centering2">Dajte svoju tvár do stredu kruhu</string>
+	<string name="dot_face_capture_instruction_step_position_too_close">Ustúpte ďalej</string>
+	<string name="dot_face_capture_instruction_step_position_too_close2">Dajte telefón ďalej od tváre</string>
+	<string name="dot_face_capture_instruction_step_position_too_far">Pristúpte bližšie</string>
+	<string name="dot_face_capture_instruction_step_position_too_far2">Dajte telefón bližšie k tvári</string>
+	<string name="dot_face_capture_instruction_step_lighting">Dajte sa k svetlu</string>
+	<string name="dot_face_capture_instruction_step_lighting2">Otočte svoju tvár na svetlo</string>
+	<string name="dot_face_capture_instruction_step_capture">Nehýbte sa prosím&#8230;</string>
+	<!-- Liveness Check -->
+	<string name="dot_liveness_check_instruction_watch_object">Sledujte objekt</string>
+	<string name="dot_liveness_check_instruction_watch_object_no_eyes">Nie je vidno Vaše oči, sledujte objekt.</string>
+	<string name="dot_liveness_check_instruction_look_straight">Dívajte sa rovno</string>
+	<string name="dot_liveness_check_instruction_low_quality_face">Otočte svoju tvár na svetlo</string>
+</resources>

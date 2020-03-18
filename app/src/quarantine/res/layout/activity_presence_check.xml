@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="32dp"
+	tools:context="sk.nczi.covid19.ui.PresenceCheckActivity">
+
+	<TextView
+		android:id="@+id/textView_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/presenceCheck_title"
+		android:textColor="@color/red"
+		android:textSize="30sp" />
+
+	<TextView
+		android:id="@+id/textView_text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="@string/presenceCheck_text" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recyclerView"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		tools:listitem="@layout/view_status" />
+
+	<TextView
+		android:id="@+id/textView_warning"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="@string/presenceCheck_warning"
+		android:textSize="10sp" />
+
+	<TextView
+		android:id="@+id/textView_url"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/presenceCheck_url"
+		android:textColor="@color/colorPrimary"
+		android:textSize="10sp" />
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1" />
+
+	<Button
+		android:id="@+id/button_continue"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/bg_btn_blue"
+		android:onClick="onButtonDone"
+		android:text="@string/phoneVerification_continue"
+		android:textColor="#fff"
+		android:textSize="18sp" />
+
+	<ProgressBar
+		android:id="@+id/progressBar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:visibility="gone"
+		tools:visibility="visible" />
+
+</LinearLayout>
