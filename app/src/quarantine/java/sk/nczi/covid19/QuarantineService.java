@@ -123,7 +123,7 @@ public class QuarantineService extends Service {
             }
         }
     };
-    private boolean locatedAtHome = false;
+    private boolean locatedAtHome = true;
     private BroadcastReceiver quarantineChangedReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
