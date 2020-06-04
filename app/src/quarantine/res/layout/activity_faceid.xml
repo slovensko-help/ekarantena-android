@@ -99,6 +99,7 @@
 			android:layout_height="wrap_content"
 			android:gravity="center_horizontal"
 			android:text="@string/faceid_failHints"
+			android:textAlignment="textStart"
 			android:textSize="10sp"
 			android:visibility="gone"
 			tools:visibility="visible" />
