@@ -33,31 +33,31 @@ import sk.nczi.covid19.App;
 import sk.nczi.covid19.R;
 
 public class ProfileFragment extends ProfileFragmentBase {
-    private final int REQUEST_FACEID = 1;
-    private final int REQUEST_COVID_PASS_VERIFICATION = 2;
+	private final int REQUEST_FACEID = 1;
+	private final int REQUEST_COVID_PASS_VERIFICATION = 2;
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == REQUEST_FACEID && resultCode == Activity.RESULT_OK) {
-            startActivityForResult(new Intent(getContext(), CovidPassVerificationActivity.class), REQUEST_COVID_PASS_VERIFICATION);
-        } else if (requestCode == REQUEST_COVID_PASS_VERIFICATION && resultCode == Activity.RESULT_OK &&
-                App.get(getContext()).getQuarantineStatus() == App.QS_REGISTERED) {
-            App.get(getContext()).updateQuarantineInfo();
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		if (requestCode == REQUEST_FACEID && resultCode == Activity.RESULT_OK) {
+			startActivityForResult(new Intent(getContext(), CovidPassVerificationActivity.class), REQUEST_COVID_PASS_VERIFICATION);
+		} else if (requestCode == REQUEST_COVID_PASS_VERIFICATION && resultCode == Activity.RESULT_OK &&
+				App.get(getContext()).getQuarantineStatus() == App.QS_REGISTERED) {
+			App.get(getContext()).updateQuarantineInfo();
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
 
-    @Override
-    protected void onButton(View v) {
-        if (App.get(v.getContext()).getQuarantineStatus() >= App.QS_REGISTERED) {
-            startActivityForResult(new Intent(v.getContext(), FaceIdActivity.class)
-                    .putExtra(FaceIdActivity.EXTRA_SKIP_CONFIRMATION, true), REQUEST_FACEID);
-        } else {
-            new AlertDialog.Builder(v.getContext())
-                    .setTitle(R.string.profile_button)
-                    .setMessage(R.string.profile_notInQuarantine)
-                    .setPositiveButton(R.string.app_ok, null)
-                    .show();
-        }
-    }
+	@Override
+	protected void onButton(View v) {
+		if (App.get(v.getContext()).getQuarantineStatus() >= App.QS_REGISTERED) {
+			startActivityForResult(new Intent(v.getContext(), FaceIdActivity.class)
+					.putExtra(FaceIdActivity.EXTRA_SKIP_CONFIRMATION, true), REQUEST_FACEID);
+		} else {
+			new AlertDialog.Builder(v.getContext())
+					.setTitle(R.string.profile_button)
+					.setMessage(R.string.profile_notInQuarantine)
+					.setPositiveButton(R.string.app_ok, null)
+					.show();
+		}
+	}
 }

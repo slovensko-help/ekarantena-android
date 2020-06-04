@@ -31,19 +31,20 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class FcmService extends FirebaseMessagingService {
-    @Override
-    public void onNewToken(@NonNull String s) {
-        App app = App.get(this);
-        app.prefs().edit().putString(App.PREF_FCM_TOKEN, s).apply();
-        // Check if we're agreed and registered and if so, send the token to API
-        if (app.prefs().getBoolean(App.PREF_TERMS, false)) {
-            // Update FCM token on API
-            app.createProfile(result -> { });
-        }
-    }
+	@Override
+	public void onNewToken(@NonNull String s) {
+		App app = App.get(this);
+		app.prefs().edit().putString(App.PREF_FCM_TOKEN, s).apply();
+		// Check if we're agreed and registered and if so, send the token to API
+		if (app.prefs().getBoolean(App.PREF_TERMS, false)) {
+			// Update FCM token on API
+			app.createProfile(result -> {
+			});
+		}
+	}
 
-    @Override
-    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-        new Handler(Looper.getMainLooper()).post(() -> App.get(this).onFcmMessage(remoteMessage));
-    }
+	@Override
+	public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+		new Handler(Looper.getMainLooper()).post(() -> App.get(this).onFcmMessage(remoteMessage));
+	}
 }

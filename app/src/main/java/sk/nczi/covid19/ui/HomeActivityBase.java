@@ -38,7 +38,9 @@ import sk.nczi.covid19.JobService;
 import sk.nczi.covid19.R;
 
 public class HomeActivityBase extends AppCompatActivity {
-	/** boolean Whether we're entering home for the first time after welcome screen */
+	/**
+	 * boolean Whether we're entering home for the first time after welcome screen
+	 */
 	public static final String EXTRA_FIRST_TIME = "sk.nczi.covid19.EXTRA_FIRST_TIME";
 
 	protected HomeFragment homeFragment;
@@ -58,13 +60,17 @@ public class HomeActivityBase extends AppCompatActivity {
 			public int getCount() {
 				return 3;
 			}
+
 			@NonNull
 			@Override
 			public Fragment getItem(int position) {
 				switch (position) {
-					case 1: return mapFragment;
-					case 2: return profileFragment;
-					default: return homeFragment;
+					case 1:
+						return mapFragment;
+					case 2:
+						return profileFragment;
+					default:
+						return homeFragment;
 				}
 			}
 		});

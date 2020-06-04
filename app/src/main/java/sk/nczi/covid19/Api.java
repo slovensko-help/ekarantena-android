@@ -37,135 +37,146 @@ import java.util.Map;
 import sk.turn.http.Http;
 
 public class Api {
-    public interface Listener {
-        void onResponse(int status, String response);
-    }
-    public static class RequestBase {
-        private Long profileId;
-        private String deviceId;
-        private String covidPass;
-        private String nonce;
-        private String status;
-        public RequestBase(long profileId, String deviceId, String covidPass) {
-            this.profileId = profileId;
-            this.deviceId = deviceId;
-            this.covidPass = covidPass;
-        }
-        public String getNonce() {
-            return nonce;
-        }
-        public void setNonce(String nonce) {
-            this.nonce = nonce;
-        }
-        public void setStatus(String status) {
-            this.status = status;
-        }
-    }
-    private static class Response {
-        private int status;
-        private String body;
-        Response(int status, String body) {
-            this.status = status;
-            this.body = body;
-        }
-    }
+	public interface Listener {
+		void onResponse(int status, String response);
+	}
 
-    /** String (public key for signing API requests) */
-    public static final String PREF_API_PUBLIC_KEY = "apiPublicKey";
+	public static class RequestBase {
+		private Long profileId;
+		private String deviceId;
+		private String covidPass;
+		private String nonce;
+		private String status;
 
-    public static LinkedHashMap<String, String> createMap(String... keyValues) {
-        LinkedHashMap<String, String> headers = new LinkedHashMap<>();
-        for (int i = 0; i < keyValues.length; i += 2) {
-            headers.put(keyValues[i * 2], keyValues[i * 2 + 1]);
-        }
-        return headers;
-    }
+		public RequestBase(long profileId, String deviceId, String covidPass) {
+			this.profileId = profileId;
+			this.deviceId = deviceId;
+			this.covidPass = covidPass;
+		}
 
-    private final App app;
-    public Api(Context context) {
-        app = App.get(context);
-    }
+		public String getNonce() {
+			return nonce;
+		}
 
-    public void send(String action, String method, Object request, final Listener listener) {
-        send(action, method, request, null, null, listener);
-    }
+		public void setNonce(String nonce) {
+			this.nonce = nonce;
+		}
 
-    public void send(String action, String method, Object request, String signingKeyAlias, final Listener listener) {
-        send(action, method, request, signingKeyAlias, null, listener);
-    }
+		public void setStatus(String status) {
+			this.status = status;
+		}
+	}
 
-    @SuppressLint("StaticFieldLeak")
-    public void send(String action, String method, Object request, String signingKeyAlias, LinkedHashMap<String, String> headers, final Listener listener) {
-        AsyncTask<Void, Void, Response> asyncTask = new AsyncTask<Void, Void, Response>() {
-            @Override
-            protected Response doInBackground(Void... voids) {
-                try {
-                    String data = (request == null ? null : new Gson().toJson(request));
-                    Uri uri = Uri.withAppendedPath(app.apiUri(), action);
-                    String versionName = app.getPackageManager().getPackageInfo(app.getPackageName(), 0).versionName;
-                    String userAgent = String.format(Locale.ROOT, "%1$s(%2$s)/%3$s(anr)", app.getString(R.string.app_userAgentAppName),
-                            app.getPackageName(), versionName.contains("-") ? versionName.substring(0, versionName.indexOf("-")) : versionName);
-                    if (App.TEST) {
-                        App.log("API > " + method + " " + uri + " (" + userAgent + ") " + data);
-                    } else {
-                        App.log("API > " + method + " " + uri);
-                    }
-                    Http http = new Http(uri.toString(), method)
-                            .addHeader("Content-Type", "application/json")
-                            .addHeader("Accept-Version", "2.0")
-                            .addHeader("User-Agent", userAgent);
-                    // Copy headers
-                    if (headers != null) {
-                        for (Map.Entry<String, String> header : headers.entrySet()) {
-                            http.addHeader(header.getKey(), header.getValue());
-                        }
-                    }
-                    // For GET requests with query params, set data to the query string for signing
-                    if (Http.GET.equals(method) && action.contains("?")) {
-                        data = action.substring(action.indexOf('?'));
-                    }
-                    // Sign the data and include signature in HTTP header
-                    if (signingKeyAlias != null && data != null) {
-                        KeyStore.PrivateKeyEntry privateKey = Security.getPrivateKey(signingKeyAlias);
-                        String publicKey = app.prefs().getString(PREF_API_PUBLIC_KEY, null);
-                        if (privateKey == null || publicKey == null) {
-                            publicKey = Security.generateKeyPair(app, signingKeyAlias);
-                            app.prefs().edit().putString(PREF_API_PUBLIC_KEY, publicKey).apply();
-                            privateKey = Security.getPrivateKey(signingKeyAlias);
-                        }
-                        String signature = publicKey + ":" + Security.sign(data, privateKey.getPrivateKey());
-                        if (App.TEST) {
-                            App.log("API signature " + signature);
-                        }
-                        http.addHeader("X-Signature", signature);
-                    }
-                    if (request != null) {
-                        http.setData(data);
-                    }
-                    int code = http.send().getResponseCode();
-                    String response = http.getResponseString();
-                    if (App.TEST) {
-                        App.log("API < " + code + " " + response + (code == 200 ? "" : " " + http.getResponseMessage()));
-                    } else {
-                        App.log("API < " + code + (code == 200 ? "" : " " + http.getResponseMessage()));
-                    }
-                    return new Response(http.getResponseCode(), response);
-                } catch (Exception e) {
-                    App.log("API failed " + e);
-                    return new Response(-1, e.getMessage());
-                }
-            }
-            @Override
-            protected void onPostExecute(Response response) {
-                if (listener != null) {
-                    listener.onResponse(response.status, response.body);
-                }
-            }
-        };
-        try {
-            asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        } catch (Exception e) {
-            listener.onResponse(-1, e.getMessage());
-        }
-    }
+	private static class Response {
+		private int status;
+		private String body;
+
+		Response(int status, String body) {
+			this.status = status;
+			this.body = body;
+		}
+	}
+
+	/**
+	 * String (public key for signing API requests)
+	 */
+	public static final String PREF_API_PUBLIC_KEY = "apiPublicKey";
+
+	public static LinkedHashMap<String, String> createMap(String... keyValues) {
+		LinkedHashMap<String, String> headers = new LinkedHashMap<>();
+		for (int i = 0; i < keyValues.length; i += 2) {
+			headers.put(keyValues[i * 2], keyValues[i * 2 + 1]);
+		}
+		return headers;
+	}
+
+	private final App app;
+
+	public Api(Context context) {
+		app = App.get(context);
+	}
+
+	public void send(String action, String method, Object request, final Listener listener) {
+		send(action, method, request, null, null, listener);
+	}
+
+	public void send(String action, String method, Object request, String signingKeyAlias, final Listener listener) {
+		send(action, method, request, signingKeyAlias, null, listener);
+	}
+
+	@SuppressLint("StaticFieldLeak")
+	public void send(String action, String method, Object request, String signingKeyAlias, LinkedHashMap<String, String> headers, final Listener listener) {
+		AsyncTask<Void, Void, Response> asyncTask = new AsyncTask<Void, Void, Response>() {
+			@Override
+			protected Response doInBackground(Void... voids) {
+				try {
+					String data = (request == null ? null : new Gson().toJson(request));
+					Uri uri = Uri.withAppendedPath(app.apiUri(), action);
+					String versionName = app.getPackageManager().getPackageInfo(app.getPackageName(), 0).versionName;
+					String userAgent = String.format(Locale.ROOT, "%1$s(%2$s)/%3$s(anr)", app.getString(R.string.app_userAgentAppName),
+							app.getPackageName(), versionName.contains("-") ? versionName.substring(0, versionName.indexOf("-")) : versionName);
+					if (App.TEST) {
+						App.log("API > " + method + " " + uri + " (" + userAgent + ") " + data);
+					} else {
+						App.log("API > " + method + " " + uri);
+					}
+					Http http = new Http(uri.toString(), method)
+							.addHeader("Content-Type", "application/json")
+							.addHeader("Accept-Version", "2.0")
+							.addHeader("User-Agent", userAgent);
+					// Copy headers
+					if (headers != null) {
+						for (Map.Entry<String, String> header : headers.entrySet()) {
+							http.addHeader(header.getKey(), header.getValue());
+						}
+					}
+					// For GET requests with query params, set data to the query string for signing
+					if (Http.GET.equals(method) && action.contains("?")) {
+						data = action.substring(action.indexOf('?'));
+					}
+					// Sign the data and include signature in HTTP header
+					if (signingKeyAlias != null && data != null) {
+						KeyStore.PrivateKeyEntry privateKey = Security.getPrivateKey(signingKeyAlias);
+						String publicKey = app.prefs().getString(PREF_API_PUBLIC_KEY, null);
+						if (privateKey == null || publicKey == null) {
+							publicKey = Security.generateKeyPair(app, signingKeyAlias);
+							app.prefs().edit().putString(PREF_API_PUBLIC_KEY, publicKey).apply();
+							privateKey = Security.getPrivateKey(signingKeyAlias);
+						}
+						String signature = publicKey + ":" + Security.sign(data, privateKey.getPrivateKey());
+						if (App.TEST) {
+							App.log("API signature " + signature);
+						}
+						http.addHeader("X-Signature", signature);
+					}
+					if (request != null) {
+						http.setData(data);
+					}
+					int code = http.send().getResponseCode();
+					String response = http.getResponseString();
+					if (App.TEST) {
+						App.log("API < " + code + " " + response + (code == 200 ? "" : " " + http.getResponseMessage()));
+					} else {
+						App.log("API < " + code + (code == 200 ? "" : " " + http.getResponseMessage()));
+					}
+					return new Response(http.getResponseCode(), response);
+				} catch (Exception e) {
+					App.log("API failed " + e);
+					return new Response(-1, e.getMessage());
+				}
+			}
+
+			@Override
+			protected void onPostExecute(Response response) {
+				if (listener != null) {
+					listener.onResponse(response.status, response.body);
+				}
+			}
+		};
+		try {
+			asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+		} catch (Exception e) {
+			listener.onResponse(-1, e.getMessage());
+		}
+	}
 }

@@ -32,11 +32,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import sk.nczi.covid19.R;
 
 public class SymptomsActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_symptoms);
-        TextView textViewText = findViewById(R.id.textView_text);
-        textViewText.setText(Html.fromHtml(getString(R.string.symptoms_text)));
-    }
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_symptoms);
+		TextView textViewText = findViewById(R.id.textView_text);
+		textViewText.setText(Html.fromHtml(getString(R.string.symptoms_text)));
+	}
 }

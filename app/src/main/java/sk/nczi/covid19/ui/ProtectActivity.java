@@ -30,9 +30,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import sk.nczi.covid19.R;
 
 public class ProtectActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_protect);
-    }
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_protect);
+	}
 }

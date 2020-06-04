@@ -35,46 +35,46 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import sk.nczi.covid19.R;
 
 public class ConfirmDialog extends BottomSheetDialog {
-    public ConfirmDialog(Context context, String title, String text) {
-        super(context);
-        setContentView(R.layout.dialog_confirm);
-        TextView textViewTitle = findViewById(R.id.textView_title);
-        if (title == null || title.isEmpty()) {
-            textViewTitle.setVisibility(View.GONE);
-        } else {
-            textViewTitle.setText(title);
-        }
-        TextView textViewText = findViewById(R.id.textView_text);
-        if (text == null || text.isEmpty()) {
-            textViewText.setVisibility(View.GONE);
-        } else {
-            textViewText.setText(text);
-        }
-    }
+	public ConfirmDialog(Context context, String title, String text) {
+		super(context);
+		setContentView(R.layout.dialog_confirm);
+		TextView textViewTitle = findViewById(R.id.textView_title);
+		if (title == null || title.isEmpty()) {
+			textViewTitle.setVisibility(View.GONE);
+		} else {
+			textViewTitle.setText(title);
+		}
+		TextView textViewText = findViewById(R.id.textView_text);
+		if (text == null || text.isEmpty()) {
+			textViewText.setVisibility(View.GONE);
+		} else {
+			textViewText.setText(text);
+		}
+	}
 
-    public ConfirmDialog setButton1(String text, @DrawableRes int background, @Nullable View.OnClickListener onClick) {
-        setButton(R.id.button1, text, background, onClick);
-        return this;
-    }
+	public ConfirmDialog setButton1(String text, @DrawableRes int background, @Nullable View.OnClickListener onClick) {
+		setButton(R.id.button1, text, background, onClick);
+		return this;
+	}
 
-    public ConfirmDialog setButton2(String text, @DrawableRes int background, @Nullable View.OnClickListener onClick) {
-        setButton(R.id.button2, text, background, onClick);
-        return this;
-    }
+	public ConfirmDialog setButton2(String text, @DrawableRes int background, @Nullable View.OnClickListener onClick) {
+		setButton(R.id.button2, text, background, onClick);
+		return this;
+	}
 
-    private void setButton(int id, String text, @DrawableRes int background, @Nullable View.OnClickListener onClick) {
-        Button button = findViewById(id);
-        if (button == null) {
-            return;
-        }
-        button.setText(text);
-        button.setBackgroundResource(background);
-        button.setOnClickListener(v -> {
-            dismiss();
-            if (onClick != null) {
-                onClick.onClick(v);
-            }
-        });
-        button.setVisibility(View.VISIBLE);
-    }
+	private void setButton(int id, String text, @DrawableRes int background, @Nullable View.OnClickListener onClick) {
+		Button button = findViewById(id);
+		if (button == null) {
+			return;
+		}
+		button.setText(text);
+		button.setBackgroundResource(background);
+		button.setOnClickListener(v -> {
+			dismiss();
+			if (onClick != null) {
+				onClick.onClick(v);
+			}
+		});
+		button.setVisibility(View.VISIBLE);
+	}
 }

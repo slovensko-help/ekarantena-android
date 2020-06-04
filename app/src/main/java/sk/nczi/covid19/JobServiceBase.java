@@ -58,7 +58,7 @@ public class JobServiceBase extends android.app.job.JobService {
 		}
 		int result = scheduler.schedule(builder.build());
 		if (result <= 0) {
-			throw new RuntimeException("Can't schedule upload job ("+jobId+"), result = " + result);
+			throw new RuntimeException("Can't schedule upload job (" + jobId + "), result = " + result);
 		}
 	}
 

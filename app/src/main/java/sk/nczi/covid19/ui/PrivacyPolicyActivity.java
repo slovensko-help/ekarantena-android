@@ -35,17 +35,17 @@ import java.io.InputStream;
 import sk.nczi.covid19.R;
 
 public class PrivacyPolicyActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_privacy_policy);
-        try (InputStream inputStream = getResources().openRawResource(R.raw.privacy)) {
-            byte[] buffer = new byte[inputStream.available()];
-            inputStream.read(buffer);
-            TextView text = findViewById(R.id.textView_text);
-            text.setText(Html.fromHtml(new String(buffer)));
-        } catch (IOException e) {
-            // Well, not much to do here...
-        }
-    }
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_privacy_policy);
+		try (InputStream inputStream = getResources().openRawResource(R.raw.privacy)) {
+			byte[] buffer = new byte[inputStream.available()];
+			inputStream.read(buffer);
+			TextView text = findViewById(R.id.textView_text);
+			text.setText(Html.fromHtml(new String(buffer)));
+		} catch (IOException e) {
+			// Well, not much to do here...
+		}
+	}
 }

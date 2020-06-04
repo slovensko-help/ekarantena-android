@@ -35,21 +35,21 @@ import androidx.fragment.app.Fragment;
 import sk.nczi.covid19.R;
 
 public class ProfileFragmentBase extends Fragment {
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, container, false);
-    }
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.fragment_profile, container, false);
+	}
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.button).setOnClickListener(this::onButton);
-        view.findViewById(R.id.textView_aboutApp).setOnClickListener(v -> startActivity(new Intent(getContext(), AboutActivity.class)));
-        view.findViewById(R.id.textView_privacy).setOnClickListener(v -> startActivity(new Intent(getContext(), PrivacyPolicyActivity.class)));
-    }
+	@Override
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		view.findViewById(R.id.button).setOnClickListener(this::onButton);
+		view.findViewById(R.id.textView_aboutApp).setOnClickListener(v -> startActivity(new Intent(getContext(), AboutActivity.class)));
+		view.findViewById(R.id.textView_privacy).setOnClickListener(v -> startActivity(new Intent(getContext(), PrivacyPolicyActivity.class)));
+	}
 
-    protected void onButton(View v) {
-        // Empty implementation
-    }
+	protected void onButton(View v) {
+		// Empty implementation
+	}
 }
