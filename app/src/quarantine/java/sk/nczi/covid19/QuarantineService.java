@@ -264,9 +264,11 @@ public class QuarantineService extends Service {
 		double radius = App.get(this).getRemoteConfig().getDouble(App.RC_QUARANTINE_RADIUS);
 		boolean atHome = distance - location.getAccuracy() <= radius;
 		App.log("QuarantineService.onQuarantineLocation: " + (atHome ? "at home" : "away") + " " + distance + "m from home");
-		if (locatedAtHome && !atHome) {
-			// Left home
+		if (locatedAtHome != atHome) {
+			locatedAtHome = atHome;
 			updateNotification();
+		}
+		if (!atHome) {
 			// Send quarantine breached notification to API
 			ApiQuarantineLeft.Request request = new ApiQuarantineLeft.Request(App.get(this).getProfileId(), App.get(this).getDeviceId(), (int) distance, location.getTime());
 			new Api(this).send("areaexit", Http.POST, request, App.SIGN_KEY_ALIAS, (status, response) -> {
@@ -274,11 +276,7 @@ public class QuarantineService extends Service {
 					App.get(this).addQuarantineLeftRequest(request);
 				}
 			});
-		} else if (!locatedAtHome && atHome) {
-			// Entered home
-			updateNotification();
 		}
-		locatedAtHome = atHome;
 	}
 
 	private class GpsStateReceiver extends BroadcastReceiver {
