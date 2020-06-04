@@ -161,7 +161,6 @@ public class HomeFragment extends HomeFragmentBase {
         button_quarantine.post(() -> { // onResume gets called after this and showing the button_quarantine again
             button_quarantine.setVisibility(View.GONE);
             progressBar.setVisibility(View.VISIBLE);
-            // TODO Show a message saying "Establishing secure communication channel, please wait as this may take a few minutes."
         });
         // Send nonce request and wait for push
         app.setPushNonceCallback(nonce -> {
@@ -185,7 +184,6 @@ public class HomeFragment extends HomeFragmentBase {
                         return;
                     }
                     if (status != 200) {
-                        // TODO If error == expired-nonce, retry the whole method
                         showError(String.format("register - %d", status), true);
                         return;
                     }
@@ -201,6 +199,7 @@ public class HomeFragment extends HomeFragmentBase {
                             .putFloat(App.PREF_HOME_LAT, (float) data.getDoubleExtra(App.PREF_HOME_LAT, 0f))
                             .putFloat(App.PREF_HOME_LNG, (float) data.getDoubleExtra(App.PREF_HOME_LNG, 0f))
                             .putString(App.PREF_FACE_TEMPLATE_DATA, data.getStringExtra(App.PREF_FACE_TEMPLATE_DATA))
+                            .putFloat(App.PREF_FACE_TEMPLATE_DATA_CONFIDENCE, data.getFloatExtra(App.PREF_FACE_TEMPLATE_DATA_CONFIDENCE, 0f))
                             .remove(App.PREF_QUARANTINE_ENDS_LAST_CHECK)
                             .apply();
                     LocalNotificationReceiver.scheduleNotification(context);
@@ -210,12 +209,10 @@ public class HomeFragment extends HomeFragmentBase {
         });
         Api.RequestBase request = new Api.RequestBase(app.getProfileId(), app.getDeviceId(), null);
         new Api(context).send("pushnonce", Http.POST, request, App.SIGN_KEY_ALIAS, (status, response) -> {
-            String additional;
+            String additional = "";
             try {
                 additional = new JSONObject(response).getJSONObject("errors").getJSONArray("DomainValidations").join(", ");
-            } catch (JSONException e) {
-                additional = "";
-            }
+            } catch (JSONException e) { }
             if (status != 200) {
                 showError(String.format("pushnonce - %d - %s", status, additional), true);
             }

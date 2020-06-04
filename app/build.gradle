@@ -49,8 +49,8 @@ android {
         quarantine {
             dimension 'MODE'
             applicationId 'sk.nczi.ekarantena'
-            versionCode 8
-            versionName '1.0.7'
+            versionCode 10
+            versionName '1.0.9'
         }
         tst { // Gradle forbids flavors to start with "test"
             dimension 'ENVIRONMENT'
@@ -85,7 +85,6 @@ dependencies {
     implementation 'sk.turn:http:1.7.0'
     implementation 'org.hashids:hashids:1.0.3'
     implementation 'com.auth0.android:jwtdecode:2.0.0'
-    compileOnly 'com.innovatrics.android:dot:2.17.0'
     quarantineImplementation 'com.innovatrics.android:dot:2.17.0'
     quarantineImplementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
     quarantineImplementation 'com.google.zxing:core:3.3.0'

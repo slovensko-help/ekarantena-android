@@ -51,6 +51,7 @@ import com.innovatrics.android.dot.verification.TemplateVerifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import sk.nczi.covid19.App;
@@ -210,14 +211,18 @@ public class FaceIdActivity extends AppCompatActivity implements Dot.Listener {
 
     private void showFaceDetectionFragment() {
         final Bundle arguments = new Bundle();
+        // Create and randomize segment list
+        List<SegmentConfiguration> segmentList = Arrays.asList(
+                new SegmentConfiguration(DotPosition.TOP_RIGHT.name(), 1000),
+                new SegmentConfiguration(DotPosition.BOTTOM_RIGHT.name(), 1000),
+                new SegmentConfiguration(DotPosition.BOTTOM_LEFT.name(), 1000),
+                new SegmentConfiguration(DotPosition.TOP_LEFT.name(), 1000));
+        Collections.shuffle(segmentList);
         Fragment fragment = new FaceCaptureFragment();
         arguments.putSerializable(FaceCaptureFragment.ARGUMENTS, new LivenessCheck2Arguments.Builder()
                 .lightScoreThreshold(.4)
-                .segmentList(Arrays.asList(
-                        new SegmentConfiguration(DotPosition.TOP_RIGHT.name(), 1000),
-                        new SegmentConfiguration(DotPosition.BOTTOM_RIGHT.name(), 1000),
-                        new SegmentConfiguration(DotPosition.BOTTOM_LEFT.name(), 1000),
-                        new SegmentConfiguration(DotPosition.TOP_LEFT.name(), 1000)))
+                .transitionType(LivenessCheck2Arguments.TransitionType.MOVING)
+                .segmentList(segmentList)
                 .build());
         fragment.setArguments(arguments);
         getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, fragment).commitAllowingStateLoss();
@@ -234,11 +239,13 @@ public class FaceIdActivity extends AppCompatActivity implements Dot.Listener {
             DetectedFace face = faces.get(0);
             // Save detected face template data
             setResult(RESULT_OK, new Intent().putExtras(getIntent())
-                    .putExtra(App.PREF_FACE_TEMPLATE_DATA, bytesToHex(face.createTemplate().getTemplate())));
+                    .putExtra(App.PREF_FACE_TEMPLATE_DATA, bytesToHex(face.createTemplate().getTemplate()))
+                    .putExtra(App.PREF_FACE_TEMPLATE_DATA_CONFIDENCE, face.getConfidence()));
             showResult(true, getString(R.string.faceid_success), false);
         } else {
+            App app = App.get(this);
             // Compare with saved face template
-            byte[] savedTemplate = hexToBytes(App.get(this).prefs().getString(App.PREF_FACE_TEMPLATE_DATA, ""));
+            byte[] savedTemplate = hexToBytes(app.prefs().getString(App.PREF_FACE_TEMPLATE_DATA, ""));
             try {
                 for (DetectedFace face : faces) {
                     float score = new TemplateVerifier().match(savedTemplate, face.createTemplate().getTemplate());

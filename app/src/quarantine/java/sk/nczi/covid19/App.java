@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -26,9 +27,6 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.firebase.messaging.RemoteMessage;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,8 +63,8 @@ public class App extends AppBase {
     public static final String PREF_QUARANTINE_ENDS_LAST_CHECK = "quarantineEndsLastCheck";
     /** byte[] (face template data) */
     public static final String PREF_FACE_TEMPLATE_DATA = "faceTemplateData";
-    /** boolean (whether face check is required prior to opening an app) */
-    public static final String PREF_REQUIRED_FACE_CHECK = "requiredFaceCheck";
+    /** float (face template data confidence level) */
+    public static final String PREF_FACE_TEMPLATE_DATA_CONFIDENCE = "faceTemplateDataConfidence";
     /** JSON String (list of yet unsent quarantine left requests) */
     private static final String PREF_QUARANTINE_LEFT_QUEUE = "quarantineLeftQueue";
     /** Remote config field for quarantine location update period (in minutes) */
@@ -194,7 +192,7 @@ public class App extends AppBase {
         statusEntries.add(se = new StatusEntry(getString(R.string.status_locationEnabled), true));
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         se.passed = locationManager != null && locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        se.status = getString(se.passed ? R.string.status_enabled : R.string.status_enable);
+        se.status = getString(se.passed ? R.string.status_active : R.string.status_activate);
         se.resolution = activity -> {
             LocationRequest locationRequest = LocationRequest.create();
             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -225,18 +223,25 @@ public class App extends AppBase {
             se.resolution = activity -> ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, 0);
         }
         if (Build.VERSION.SDK_INT < 23 ) {
-            statusEntries.add(se = new StatusEntry(getString(R.string.status_noMockLocation), true));
+            statusEntries.add(se = new StatusEntry(getString(R.string.status_mockLocation), true));
             se.passed = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0");
             se.status = getString(se.passed ? R.string.status_forbidden : R.string.status_forbid);
             se.resolution = activity -> startActivity(new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS));
         }
-        statusEntries.add(se = new StatusEntry(getString(R.string.status_noBadApps), true));
+        statusEntries.add(se = new StatusEntry(getString(R.string.status_forbiddenApps), true));
         List<String> badApps = Security.testPackageHashes(this, R.raw.gps);
         badApps.addAll(Security.testPackageHashes(this, R.raw.camera));
         badApps.addAll(Security.testPackagesMock(this));
+        badApps.removeAll(Security.allowedHashes(this, badApps, R.raw.allow));
         se.passed = badApps.size() == 0;
-        se.status = getString(se.passed ? R.string.status_none : R.string.status_uninstall);
-        // TODO: se.resolution = activity ->
+        se.status = se.passed ? getString(R.string.status_none) : String.valueOf(badApps.size());
+        se.resolution = activity -> new AlertDialog.Builder(activity)
+                .setTitle(R.string.status_forbiddenApps)
+                .setMessage(R.string.status_forbiddenApps_explanation)
+                .setPositiveButton(R.string.status_uninstall, (dialog, which) ->
+                        activity.startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + badApps.get(0)))))
+                .setNegativeButton(R.string.places_cancel, null)
+                .show();
         return statusEntries;
     }
 
@@ -335,7 +340,7 @@ public class App extends AppBase {
                 }
             } else {
                 // Try to read the error
-                String additional = "";
+                /*String additional = "";
                 try {
                     additional = new JSONObject(response).getJSONObject("errors").getJSONArray("DomainValidations").join(", ");
                 } catch (JSONException e) { }
@@ -352,7 +357,7 @@ public class App extends AppBase {
                             callback.onCallback(result);
                         }
                     });
-                } else if (callback != null) {
+                } else */if (callback != null) {
                     callback.onCallback(false);
                 }
             }

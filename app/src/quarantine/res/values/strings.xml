@@ -42,11 +42,12 @@
 	<string name="covidPassVerification_yourCode">Vaše 6-ciferné číslo je</string>
 
 	<string name="status_cameraPermission">Prístup k fotoaparátu</string>
-	<string name="status_noBadApps">Žiadne zakázané aplikácie</string>
-	<string name="status_noMockLocation">Zakázanie simulovania polohy</string>
-	<string name="status_locationEnabled">Zapnuté lokačné služby</string>
+	<string name="status_locationEnabled">Lokačné služby</string>
 	<string name="status_locationPermission">Prístup k lokácii</string>
 	<string name="status_backgroundLocationPermission">Prístup k lokácii na pozadí</string>
+	<string name="status_mockLocation">Simulovanie polohy</string>
+	<string name="status_forbiddenApps">Zakázané aplikácie</string>
+	<string name="status_forbiddenApps_explanation">Na Vašom telefóne sú nainštalované aplikácie, ktoré môžu ovplyvniť výsledok overenia. Pre úspešné overenie je nevyhnutné tieto aplikácie odinštalovať.</string>
 	<string name="status_currentLocation">Aktuálna poloha zariadenia</string>
 	<string name="status_searching">Hľadám...</string>
 	<string name="status_found">Nájdená</string>

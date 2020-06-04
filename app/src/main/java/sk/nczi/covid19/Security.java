@@ -174,9 +174,8 @@ public class Security {
         return data;
     }
 
-    public static List<String> testPackageHashes(Context context, int resourceId) {
-        List<String> found = new LinkedList<>();
-        byte[][] badApps;
+    private static byte[][] loadHashes(Context context, int resourceId) {
+    	byte[][] hashes;
         try {
             InputStream forbidden = context.getResources().openRawResource(resourceId);
             BufferedReader reader = new BufferedReader(new InputStreamReader(forbidden));
@@ -186,12 +185,46 @@ public class Security {
                 lines.add(line);
             }
             reader.close();
-            badApps = new byte[lines.size()][];
+            hashes = new byte[lines.size()][];
             for (int i = 0; i < lines.size(); ++i) {
-                badApps[i] = hexToBytes(lines.get(i));
+                hashes[i] = hexToBytes(lines.get(i));
             }
         } catch (IOException | Resources.NotFoundException ioe) {
-            return found;
+        	return null;
+        }
+        return hashes;
+    }
+
+    public static List<String> allowedHashes(Context context, List<String> badApps, int allowedResourceId) {
+    	byte[][] allowedApps = loadHashes(context, allowedResourceId);
+    	List<String> result = new LinkedList<>();
+    	if (allowedApps == null) {
+    		return result;
+    	}
+		MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException nsae) {
+            return result;
+        }
+        for (String packageName : badApps) {
+        	md.update(packageName.getBytes(StandardCharsets.US_ASCII));
+            byte[] result = md.digest();
+            md.reset();
+            for (byte[] allowedHash : allowedApps) {
+                if (Arrays.equals(result, allowedHash)) {
+                    result.add(packageName);
+                }
+            }
+        }
+        return result;
+    }
+
+    public static List<String> testPackageHashes(Context context, int resourceId) {
+        List<String> found = new LinkedList<>();
+        byte[][] badApps = loadHashes(context, resourceId);
+        if (badApps == null) {
+        	return found;
         }
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
