@@ -130,6 +130,8 @@ public class Api {
 							http.addHeader(header.getKey(), header.getValue());
 						}
 					}
+					// Do certificate pinning
+					http.setTrustedRoot(app.getCountryDefaults().getStoredRoot(R.raw.azure_root));
 					// For GET requests with query params, set data to the query string for signing
 					if (Http.GET.equals(method) && action.contains("?")) {
 						data = action.substring(action.indexOf('?'));
