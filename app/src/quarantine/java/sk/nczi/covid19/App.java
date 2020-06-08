@@ -27,6 +27,7 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.firebase.messaging.RemoteMessage;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.scottyab.rootbeer.RootBeer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -286,6 +287,15 @@ public class App extends AppBase {
 			se.status = getString(se.passed ? R.string.status_forbidden : R.string.status_forbid);
 			se.resolution = activity -> startActivity(new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS));
 		}
+		RootBeer rootBeer = new RootBeer(this);
+		statusEntries.add(se = new StatusEntry(getString(R.string.status_root), true));
+		se.passed = !rootBeer.isRooted();
+		se.status = getString(se.passed ? R.string.status_not_detected : R.string.status_detected);
+		se.resolution = activity -> new AlertDialog.Builder(this)
+				.setTitle(R.string.status_root)
+				.setMessage(R.string.status_root_explanation)
+				.setPositiveButton(R.string.app_ok, (d, w) -> {})
+				.show();
 		statusEntries.add(se = new StatusEntry(getString(R.string.status_forbiddenApps), true));
 		List<String> badApps = Security.testPackageHashes(this, R.raw.gps);
 		badApps.addAll(Security.testPackageHashes(this, R.raw.camera));

@@ -46,6 +46,10 @@
 	<string name="status_locationPermission">Prístup k lokácii</string>
 	<string name="status_backgroundLocationPermission">Prístup k lokácii na pozadí</string>
 	<string name="status_mockLocation">Simulovanie polohy</string>
+	<string name="status_root">Root zariadenia</string>
+	<string name="status_detected">Detekovaný</string>
+	<string name="status_not_detected">Nedetekovaný</string>
+	<string name="status_root_explanation">Na Vašom telefóne bol detekovaný root prístup. Pre úspešné overenie je nevyhnutné root prístup odstrániť.</string>
 	<string name="status_forbiddenApps">Zakázané aplikácie</string>
 	<string name="status_forbiddenApps_explanation">Na Vašom telefóne sú nainštalované aplikácie, ktoré môžu ovplyvniť výsledok overenia. Pre úspešné overenie je nevyhnutné tieto aplikácie odinštalovať.</string>
 	<string name="status_currentLocation">Aktuálna poloha zariadenia</string>
