@@ -15,7 +15,7 @@
 
 	<string name="home_checkQuarantine">Vraciate sa zo zahraničia a ste registrovaný pre inteligentnú karanténu?</string>
 	<string name="home_checkVerification">Overiť sa v mieste izolácie</string>
-	<string name="home_checkVerification_none">V súčasnostni nie je požiadavka na overenie Vašej tváre a lokácie v izolácii. Táto požiadavka však môže prísť kedykoľvek.\n\nNeopúšťajte miesto Vašej povinnej izolácie. Môžete sa dopustiť vážneho priestupku.</string>
+	<string name="home_checkVerification_none">V súčasnostni nie je požiadavka na overenie Vašej tváre a lokácie v izolácii, alebo už vypršala. Táto požiadavka však môže prísť kedykoľvek.\n\nNeopúšťajte miesto Vašej povinnej izolácie. Môžete sa dopustiť vážneho priestupku.</string>
 	<string name="home_quarantineNotSetYet">Odpočet nebol zahájený</string>
 	<string name="home_quarantineNotSetExplanation">Udeje sa tak autoritou pri prechode hranicou</string>
 	<string name="home_quarantineStartsInFuture">Presuňte sa na adresu domácej izolácie do %1$s</string>
@@ -63,7 +63,7 @@
 	<string name="presenceCheck_title">Dôležité</string>
 	<string name="presenceCheck_text">Aplikácia Vás žiada o overenie sa v mieste Vašej izolácie. Je potrebné reagovať okamžite a pokračovať rozpoznaním tváre. Aplikácia bude pristupovať k Vašemu fotoaparátu a GPS lokácii.</string>
 	<string name="presenceCheck_warning">Ak sa chcete vyhnúť kontrole zo strany štátu, sprístupnite si všetky prístupy v nastaveniach aplikácie, čím skôr.\n\nViac informácii nájdete na stránke tu:</string>
-	<string name="presenceCheck_url">https://www.korona.gov.sk/zostanzdravy/how-to.html</string>
+	<string name="presenceCheck_url">https://korona.gov.sk/ekarantena/</string>
 
 	<string name="faceid_title">Sledovanie tváre pre karanténu</string>
 	<string name="faceid_text1">Prosím naskenujte Vašu tvár pre prípadnú verifikáciu pri dodržiavaní povinnej izolácie.</string>
@@ -106,12 +106,12 @@ zariadenia. Zároveň aplikácia zobrazuje štatistické údaje o celkovom počt
 chorobnosti v regiónoch.
 \n\nProces funkcionality domácej karantény je nasledovný:
 \n\n1. Užívateľ, Repatriant, ktorý by chcel využiť domácu karanténu, sa musí prihlásiť na stránkach
-https://navraty.mzv.sk/  Svojimi identifikačnými údajmi, ako aj presným miestom, kde sa bude
+https://ekarantena.korona.gov.sk/  Svojimi identifikačnými údajmi, ako aj presným miestom, kde sa bude
 vyskytovať v domácej karanténe. Toto miesto nie je možné neskôr zmeniť. Zároveň je
 potrebné použiť jednotné telefónne číslo, ktoré bude užívateľ používať ako referenčné
 telefónne číslo v tomto telefóne po celú dobu pre aplikáciu eKarantena. Telefónne číslo nie
 je možné počas doby v domácej karanténe zmeniť a musí byť totožné s telefónnym
-číslom vo formulári registrácie domácej karantény na stránkach htts://navraty.mzv.sk/.
+číslom vo formulári registrácie domácej karantény na stránkach htts://ekarantena.korona.gov.sk/.
 \n2. Užívateľ si stiahne aplikáciu eKarantena Slovensko a musí povoliť všetky požiadavky
 aplikácie vrátane GPS, ktoré musia bežať na pozadí, notifikácie, či prístup k fotoaparátu.
 Užívateľ musí mať k dispozícii nepretržite internet, ako aj platnú SIM kartu na telefóne, kde

@@ -82,7 +82,7 @@ dependencies {
     implementation 'com.google.maps.android:android-maps-utils:1.0.2'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     implementation 'com.github.ialokim:android-phone-field:0.2.3'
-    implementation 'sk.turn:http:1.7.0'
+    implementation 'sk.turn:http:1.7.1'
     implementation 'com.scottyab:rootbeer-lib:0.0.8'
     implementation 'com.auth0.android:jwtdecode:2.0.0'
     quarantineImplementation 'com.innovatrics.android:dot:2.17.0'

@@ -36,6 +36,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -240,6 +243,16 @@ public class CountryDefaults {
 		callback.onCallback(css);
 	}
 
+	public X509Certificate getStoredRoot(int resourceId) {
+		try (InputStream in = context.getResources().openRawResource(resourceId)) {
+			CertificateFactory fact = CertificateFactory.getInstance("X.509");
+			return (X509Certificate) fact.generateCertificate(in);
+		} catch (IOException | CertificateException e) {
+			return null;
+		}
+	}
+
+
 	public void sendVerificationCodeText(String phoneNumber, App.Callback<Exception> callback) {
 		HashMap<String, Object> data = new HashMap<>();
 		data.put("vPhoneNumber", phoneNumber);
@@ -248,6 +261,7 @@ public class CountryDefaults {
 		App.log("API " + url);
 		new Http(url, Http.POST)
 				.addHeader("Authorization", context.getString(R.string.phoneVerificationAuth))
+				.setTrustedRoot(getStoredRoot(R.raw.moez_root))
 				.setData(new Gson().toJson(data))
 				.send(http -> {
 					ValidateOtpResp resp = http.getResponseCode() / 100 == 2 ? new Gson().fromJson(http.getResponseString(), ValidateOtpResp.class) : null;
@@ -295,6 +309,7 @@ public class CountryDefaults {
 		new Http(url, Http.POST)
 				.addHeader("Authorization", context.getString(R.string.phoneVerificationAuth))
 				.setData(new Gson().toJson(data))
+				.setTrustedRoot(getStoredRoot(R.raw.moez_root))
 				.send(http -> {
 					ValidateOtpResp resp = http.getResponseCode() == 200 ? new Gson().fromJson(http.getResponseString(), ValidateOtpResp.class) : null;
 					handler.post(() -> {
