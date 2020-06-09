@@ -230,12 +230,13 @@ public class FaceIdActivity extends AppCompatActivity implements Dot.Listener {
 	private void showFaceDetectionFragment() {
 		final Bundle arguments = new Bundle();
 		// Create and randomize segment list
-		List<SegmentConfiguration> segmentList = Arrays.asList(
-				new SegmentConfiguration(DotPosition.TOP_RIGHT.name(), 1000),
-				new SegmentConfiguration(DotPosition.BOTTOM_RIGHT.name(), 1000),
-				new SegmentConfiguration(DotPosition.BOTTOM_LEFT.name(), 1000),
-				new SegmentConfiguration(DotPosition.TOP_LEFT.name(), 1000));
-		Collections.shuffle(segmentList);
+		List<SegmentConfiguration> segmentList = new ArrayList();
+		for (int i = 0; i < 8; i++) {
+			final DotPosition position = (DotPosition.getRandomPositionExclude(Arrays.asList(
+					i > 0 ? segmentList.get(i - 1).getTargetPosition() : null,
+					i > 1 ? segmentList.get(i - 2).getTargetPosition() : null)));
+			segmentList.add(new SegmentConfiguration(position.name(), 1000));
+		}
 		Fragment fragment = new FaceCaptureFragment();
 		arguments.putSerializable(FaceCaptureFragment.ARGUMENTS, new LivenessCheck2Arguments.Builder()
 				.lightScoreThreshold(.4)
